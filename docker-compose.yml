@@ -1,0 +1,20 @@
+version: '3.4'
+services:
+  payment-postgres:
+    image: postgres:15-bullseye
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=payment
+
+  payment-pgadmin:
+    image: dpage/pgadmin4:latest
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: postgres@postgres.com
+      PGADMIN_DEFAULT_PASSWORD: secret
+    ports:
+      - "8090:80"
