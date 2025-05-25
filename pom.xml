@@ -13,21 +13,15 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>payment</name>
 	<description>Payment api</description>
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
+
 	<properties>
 		<java.version>24</java.version>
+
+		<springdoc-openapi-maven-plugin.version>1.4</springdoc-openapi-maven-plugin.version>
+		<springdoc-openapi-starter-webmvc-ui.version>2.0.2</springdoc-openapi-starter-webmvc-ui.version>
+		<modelmapper.version>3.1.0</modelmapper.version>
+<!--		todo check latest versions-->
+
 	</properties>
 	<dependencies>
 		<dependency>
@@ -108,6 +102,18 @@
 <!--			<artifactId>postgresql</artifactId>-->
 <!--			<scope>test</scope>-->
 <!--		</dependency>-->
+
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>${springdoc-openapi-starter-webmvc-ui.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>${modelmapper.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -141,6 +147,17 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-maven-plugin</artifactId>
+				<version>${springdoc-openapi-maven-plugin.version}</version>
+				<configuration>
+					<apiDocsUrl>http://localhost:8080/api-docs.yaml</apiDocsUrl>
+					<outputFileName>payment-api.yaml</outputFileName>
+					<outputDir>${project.basedir}/contract/open-api</outputDir>
 				</configuration>
 			</plugin>
 		</plugins>

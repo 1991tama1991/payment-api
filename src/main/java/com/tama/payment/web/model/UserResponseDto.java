@@ -1,28 +1,24 @@
-package com.tama.payment;
+package com.tama.payment.web.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
 
 import java.util.UUID;
 
+@Schema(name = "UserResponse", description = "A representation of user response.")
 @Data
-@Builder
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
+public class UserResponseDto {
 
-@Entity
-@Table(name = "user")
-public class UserEntity {
-
-    @Id
     @Builder.Default
     UUID id = UUID.randomUUID();
 
