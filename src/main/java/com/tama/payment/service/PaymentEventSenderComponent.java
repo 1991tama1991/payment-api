@@ -23,7 +23,7 @@ public class PaymentEventSenderComponent {
     final KafkaTemplate<String, PaymentEvent> kafkaTemplate;
 
     public void sendEvent(PaymentEvent event){
-        kafkaTemplate.send(topicName, KEY , event);
+        kafkaTemplate.send(topicName, KEY, event);
 
         log.debug("Producer sent the message {}", event);
     }

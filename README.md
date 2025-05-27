@@ -27,3 +27,9 @@ Run the app with local profile:
 mvn springdoc-openapi:generate
 ```
 - In case of new request/response dto introduction/change a new json should be placed under resources/examples directory. The name should be the same as the name of the schema (@Schema(name="?")).
+
+## Todos
+- Implement unit test for the service classes (which were not part of the assignment)
+- Implement spring integration test for endpoints (which were not part of the assignment)
+- Create application.yml files for the different envs
+- Implement different validation related negative cases for PaymentControllerIT (fe: negative amount)

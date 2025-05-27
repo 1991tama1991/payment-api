@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    config:
+      enabled: false
+  flyway:
+    enabled: true
+    locations:
+      - classpath:db/migration
+      - classpath:db/test-init
+  jpa:
+    show-sql: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost/issuer
+
+keycloak:
+  url: http://localhost:8080/auth
+  realm: master
+  admin:
+    secret: test
+    client: test

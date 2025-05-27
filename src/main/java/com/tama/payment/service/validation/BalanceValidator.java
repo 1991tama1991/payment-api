@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class BalanceValidator {
 
     public void validate(double balance, double amount) {
-        if (balance - amount <= 0.00) {
+        if (balance - amount < 0.00) {
             throw new PaymentException(ErrorCode.TOO_LOW_BALANCE, HttpStatus.BAD_REQUEST);
         }
     }

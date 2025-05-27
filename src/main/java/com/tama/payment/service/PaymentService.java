@@ -43,15 +43,15 @@ public class PaymentService {
         // todo check order
         List<UUID> accounts = orderAccountsById(paymentRequest);
 
-        AccountEntity firstLock = getAccountEntity(accounts, 0);
-        AccountEntity secondLock = getAccountEntity(accounts, 1);
+        AccountEntity firstLockedAccount = getAccountEntity(accounts, 0);
+        AccountEntity secondLockedAccount = getAccountEntity(accounts, 1);
 
         Double amount = paymentRequest.getAmount();
 
-        if (firstLock.getId().equals(paymentRequest.getSender())) {
-            transferMoney(firstLock, amount, secondLock);
+        if (firstLockedAccount.getId().equals(paymentRequest.getSender())) {
+            transferMoney(firstLockedAccount, amount, secondLockedAccount);
         } else {
-            transferMoney(secondLock, amount, firstLock);
+            transferMoney(secondLockedAccount, amount, firstLockedAccount);
         }
 
         PaymentEntity savedPayment = paymentRepository.save(modelMapper.map(paymentRequest, PaymentEntity.class));

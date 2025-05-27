@@ -6,6 +6,11 @@ spring:
     name: Payment service
     api-version: 1.0
 
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
 springdoc:
   api-docs:
     path: /api-docs
