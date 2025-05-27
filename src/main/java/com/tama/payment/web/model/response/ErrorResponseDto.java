@@ -6,12 +6,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
-@Schema(name = "ErrorResponse", description = "A representation of error response.")
+@Schema(name = "ErrorResponseDto", description = "A representation of error response.")
 
 @Data
 @Builder
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
-public class ErrorResponse{
+public class ErrorResponseDto {
 
     String message;
     int statusCode;

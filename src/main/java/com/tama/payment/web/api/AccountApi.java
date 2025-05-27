@@ -15,7 +15,7 @@ import org.springframework.web.ErrorResponse;
 
 import java.util.List;
 
-@Tag(name = "account", description = "The account API to be able to create test accounts")
+@Tag(name = "account", description = "The account API to be able to create and list test accounts")
 public interface AccountApi {
 
    

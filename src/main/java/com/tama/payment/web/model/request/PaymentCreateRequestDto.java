@@ -8,7 +8,7 @@ import lombok.experimental.FieldDefaults;
 
 import java.util.UUID;
 
-@Schema(name = "PaymentCreateRequest", description = "A representation of payment request while creating the entity.")
+@Schema(name = "PaymentCreateRequestDto", description = "A representation of payment request while creating the entity.")
 @Data
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)

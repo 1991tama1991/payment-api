@@ -1,6 +1,18 @@
+application:
+  openapi-example-path-directory: examples/
+
 spring:
   application:
-    name: payment
+    name: Payment service
+    api-version: 1.0
+
+springdoc:
+  api-docs:
+    path: /api-docs
+    resolve-schema-properties: true
+  swagger-ui:
+    path: /swagger-ui.html
+  writer-with-default-pretty-printer: true
 
 payment:
     topic: payment

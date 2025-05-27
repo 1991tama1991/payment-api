@@ -6,7 +6,7 @@ import lombok.experimental.FieldDefaults;
 
 import java.util.UUID;
 
-@Schema(name = "AccountResponse", description = "A representation of account response.")
+@Schema(name = "AccountResponseDto", description = "A representation of account response.")
 @Data
 @Builder
 @NoArgsConstructor

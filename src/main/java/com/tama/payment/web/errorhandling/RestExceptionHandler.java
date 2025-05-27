@@ -1,7 +1,7 @@
 package com.tama.payment.web.errorhandling;
 
 import com.tama.payment.exception.PaymentException;
-import com.tama.payment.web.model.response.ErrorResponse;
+import com.tama.payment.web.model.response.ErrorResponseDto;
 import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -20,9 +20,9 @@ import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 public class RestExceptionHandler {
 
     @ExceptionHandler({PaymentException.class})
-    public ResponseEntity<ErrorResponse> handlePaymentException(PaymentException exception) {
+    public ResponseEntity<ErrorResponseDto> handlePaymentException(PaymentException exception) {
 
-        return new ResponseEntity<>(ErrorResponse.builder()
+        return new ResponseEntity<>(ErrorResponseDto.builder()
                 .message(exception.getErrorCode().getMessage())
                 .statusCode(exception.getHttpStatus().value())
                 .build(), exception.getHttpStatus());
@@ -32,7 +32,7 @@ public class RestExceptionHandler {
     public ResponseEntity<Object> handleMethodArgumentNotValidException(MethodArgumentNotValidException exception) {
         HttpStatus httpStatus = BAD_REQUEST;
 
-        return new ResponseEntity<>(ErrorResponse.builder()
+        return new ResponseEntity<>(ErrorResponseDto.builder()
                 .message(FORM_VALIDATION_ERROR.getMessage())
                 .statusCode(httpStatus.value())
                 .build(), httpStatus);
@@ -43,19 +43,19 @@ public class RestExceptionHandler {
     public ResponseEntity<Object> handleConstraintViolationException(ConstraintViolationException exception) {
         HttpStatus httpStatus = BAD_REQUEST;
 
-        return new ResponseEntity<>(ErrorResponse.builder()
+        return new ResponseEntity<>(ErrorResponseDto.builder()
                 .message(FORM_VALIDATION_ERROR.getMessage())
                 .statusCode(httpStatus.value())
                 .build(), httpStatus);
     }
 
     @ExceptionHandler({Throwable.class})
-    public ResponseEntity<ErrorResponse> handleThrowable(Throwable throwable) {
+    public ResponseEntity<ErrorResponseDto> handleThrowable(Throwable throwable) {
         HttpStatus internalServerError = INTERNAL_SERVER_ERROR;
 
         log.error("Unexpected exception: ", throwable);
 
-        return new ResponseEntity<>(ErrorResponse.builder()
+        return new ResponseEntity<>(ErrorResponseDto.builder()
                 .message(UNEXPECTED_ERROR.getMessage())
                 .statusCode(internalServerError.value())
                 .build(), internalServerError);

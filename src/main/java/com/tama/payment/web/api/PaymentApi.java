@@ -15,7 +15,7 @@ import org.springframework.web.ErrorResponse;
 
 import java.util.List;
 
-@Tag(name = "payment", description = "The payment API to be able to create test payments")
+@Tag(name = "payment", description = "The payment API to be able to create and list payments")
 public interface PaymentApi {
 
    

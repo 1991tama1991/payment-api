@@ -9,7 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
-@Schema(name = "AccountCreateRequest", description = "A representation of account request while creating the entity.")
+@Schema(name = "AccountCreateRequestDto", description = "A representation of account request while creating the entity.")
 @Data
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)

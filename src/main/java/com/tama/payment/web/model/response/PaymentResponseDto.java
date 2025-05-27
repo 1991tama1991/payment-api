@@ -7,7 +7,7 @@ import lombok.experimental.FieldDefaults;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
-@Schema(name = "PaymentResponse", description = "A representation of payment response.")
+@Schema(name = "PaymentResponseDto", description = "A representation of payment response.")
 @Data
 @Builder
 @NoArgsConstructor
