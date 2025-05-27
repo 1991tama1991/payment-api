@@ -1,9 +1,9 @@
 package com.tama.payment.web.controller;
 
-import com.tama.payment.web.api.UserApi;
-import com.tama.payment.service.UserService;
-import com.tama.payment.web.model.UserCreateRequestDto;
-import com.tama.payment.web.model.UserResponseDto;
+import com.tama.payment.web.api.AccountApi;
+import com.tama.payment.service.AccountService;
+import com.tama.payment.web.model.request.AccountCreateRequestDto;
+import com.tama.payment.web.model.response.AccountResponseDto;
 import jakarta.validation.Valid;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -19,26 +19,26 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/users")
+@RequestMapping("/api/v1/accounts")
 @RequiredArgsConstructor
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
-public class UserController implements UserApi {
+public class AccountController implements AccountApi {
 
-    UserService userService;
+    AccountService accountService;
 
     @Override
     @PostMapping
-    public ResponseEntity<UserResponseDto> createUser(
-            @Valid @RequestBody UserCreateRequestDto userRequest) {
+    public ResponseEntity<AccountResponseDto> createAccount(
+            @Valid @RequestBody AccountCreateRequestDto accountRequest) {
 
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(userService.createUser(userRequest));
+                .body(accountService.createAccount(accountRequest));
     }
 
     @Override
     @GetMapping
-    public ResponseEntity<List<UserResponseDto>> listUsers() {
-        return ResponseEntity.ok(userService.getUsers());
+    public ResponseEntity<List<AccountResponseDto>> listAccounts() {
+        return ResponseEntity.ok(accountService.getAccounts());
     }
 
 }

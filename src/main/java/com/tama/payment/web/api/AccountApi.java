@@ -1,8 +1,8 @@
 package com.tama.payment.web.api;
 
 
-import com.tama.payment.web.model.UserCreateRequestDto;
-import com.tama.payment.web.model.UserResponseDto;
+import com.tama.payment.web.model.request.AccountCreateRequestDto;
+import com.tama.payment.web.model.response.AccountResponseDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -15,53 +15,53 @@ import org.springframework.web.ErrorResponse;
 
 import java.util.List;
 
-@Tag(name = "user", description = "The user API to be able to create test users")
-public interface UserApi {
+@Tag(name = "account", description = "The account API to be able to create test accounts")
+public interface AccountApi {
 
    
 
     /**
-     * GET /users
-     * List all the users.
+     * GET /accounts
+     * List all the accounts.
      *
-     * @return List of available users. (status code 200)
+     * @return List of available accounts. (status code 200)
      */
     @Operation(
-            operationId = "listUsers",
+            operationId = "listAccounts",
             responses = {
-                    @ApiResponse(responseCode = "200", description = "List of available users.",
+                    @ApiResponse(responseCode = "200", description = "List of available accounts.",
                             content = {
                                     @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
-                                            schema = @Schema(implementation = UserResponseDto.class))
+                                            schema = @Schema(implementation = AccountResponseDto.class))
                             })
             }
     )
-    ResponseEntity<List<UserResponseDto>> listUsers();
+    ResponseEntity<List<AccountResponseDto>> listAccounts();
 
     /**
-     * POST /users
-     * Create user.
+     * POST /accounts
+     * Create account.
      *
-     * @param userRequest (required)
-     * @return Created user with user id. (status code 201)
+     * @param accountRequest (required)
+     * @return Created account with account id. (status code 201)
      * or Request payload is invalid. (status code 400)
      */
     @Operation(
-            operationId = "createUser",
+            operationId = "createAccount",
             responses = {
                     @ApiResponse(responseCode = "201",
-                            description = "Created user with creation date-time and user id.",
+                            description = "Created account with creation date-time and account id.",
                             content = {
                                     @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
-                                            schema = @Schema(implementation = UserResponseDto.class))
+                                            schema = @Schema(implementation = AccountResponseDto.class))
                             }),
                     @ApiResponse(responseCode = "400", description = "Request payload is invalid.",
                             content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                                     schema = @Schema(implementation = ErrorResponse.class))})
             }
     )
-    ResponseEntity<UserResponseDto> createUser(
-            @Parameter(name = "UserRequest", required = true) UserCreateRequestDto userRequest
+    ResponseEntity<AccountResponseDto> createAccount(
+            @Parameter(name = "AccountRequest", required = true) AccountCreateRequestDto accountRequest
     );
     
 }

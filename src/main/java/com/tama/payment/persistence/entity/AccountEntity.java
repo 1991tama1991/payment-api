@@ -3,12 +3,7 @@ package com.tama.payment.persistence.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotNull;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.util.UUID;
@@ -20,18 +15,13 @@ import java.util.UUID;
 @AllArgsConstructor
 
 @Entity
-@Table(name = "transaction")
-public class TransactionEntity {
+@Table(name = "accounts")
+public class AccountEntity {
 
     @Id
     @Builder.Default
     UUID id = UUID.randomUUID();
 
-    double amount;
-
-    @NotNull
-    UUID recipient;
-
-    @NotNull
-    UUID sender;
+    @Builder.Default
+    double balance = 0;
 }

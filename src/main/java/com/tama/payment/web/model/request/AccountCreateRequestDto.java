@@ -1,4 +1,4 @@
-package com.tama.payment.web.model;
+package com.tama.payment.web.model.request;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
@@ -9,13 +9,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
-@Schema(name = "UserCreateRequest", description = "A representation of user request while creating the entity.")
+@Schema(name = "AccountCreateRequest", description = "A representation of account request while creating the entity.")
 @Data
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserCreateRequestDto {
+public class AccountCreateRequestDto {
 
     @NotNull
     Double balance;
