@@ -6,10 +6,24 @@ spring:
     name: Payment service
     api-version: 1.0
 
+  datasource:
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
   kafka:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      acks: all
+      retries: 2147483647
+      delivery-timeout-ms: 120000
+      properties:
+        enable.idempotence: true
+        max.in.flight.requests.per.connection: 5
 
 springdoc:
   api-docs:
