@@ -35,6 +35,11 @@ mvn springdoc-openapi:generate
 docker build  -t payment-service .  
 ```
 
+## High availability
+- Prometheus and grafana are added to the compose file
+![img_1.png](img_1.png)
+- Todo dashboard and datasources can be configured via yml to have the screenshot without volumes
+
 
 ## Todos
 - Implement unit test for the service classes (which were not part of the assignment)
