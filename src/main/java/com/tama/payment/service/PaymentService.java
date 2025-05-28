@@ -40,7 +40,6 @@ public class PaymentService {
     @Transactional
     public PaymentResponseDto createPayment(PaymentCreateRequestDto paymentRequest) {
 
-        // todo check order
         List<UUID> accounts = orderAccountsById(paymentRequest);
 
         AccountEntity firstLockedAccount = getAccountEntity(accounts, 0);
