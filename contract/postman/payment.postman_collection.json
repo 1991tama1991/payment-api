@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "7b191f3d-5776-48c7-afb0-b2e43eeada86",
+		"_postman_id": "a84d511f-298c-4091-a481-04f686eb72e8",
 		"name": "payment",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "34819121",
-		"_collection_link": "https://team00-0024.postman.co/workspace/Brand-config-demo~5b1addd2-a4cb-4ad4-891c-4850fa396d78/collection/34819121-7b191f3d-5776-48c7-afb0-b2e43eeada86?action=share&source=collection_link&creator=34819121"
+		"_collection_link": "https://team00-0024.postman.co/workspace/Brand-config-demo~5b1addd2-a4cb-4ad4-891c-4850fa396d78/collection/34819121-a84d511f-298c-4091-a481-04f686eb72e8?action=share&source=collection_link&creator=34819121"
 	},
 	"item": [
 		{
@@ -116,14 +116,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/v1/accounts",
+							"raw": "{{baseUrl}}/api/v1/payments",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"api",
 								"v1",
-								"accounts"
+								"payments"
 							]
 						}
 					},
@@ -136,7 +136,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"amount\": 1.0,\r\n  \"sender\": \"364709dd-53ec-4b9d-b58d-c2419d7c1ee7\",\r\n  \"recipient\": \"ae54616e-c1d1-444d-a067-cef7e65a9977\"\r\n}",
+							"raw": "{\r\n  \"amount\": 1.0,\r\n  \"sender\": \"dbceea6b-ac65-4fe9-8482-7f8a6cf38d0c\",\r\n  \"recipient\": \"ae8f0a3c-d16c-45f4-9743-82fc70c6b681\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
