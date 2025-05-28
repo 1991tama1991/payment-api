@@ -2,6 +2,7 @@ package com.tama.payment.web.api;
 
 
 import com.tama.payment.web.model.request.PaymentCreateRequestDto;
+import com.tama.payment.web.model.response.ErrorResponseDto;
 import com.tama.payment.web.model.response.PaymentResponseDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -11,7 +12,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.ErrorResponse;
 
 import java.util.List;
 
@@ -57,7 +57,7 @@ public interface PaymentApi {
                             }),
                     @ApiResponse(responseCode = "400", description = "Request payload is invalid.",
                             content = {@Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
-                                    schema = @Schema(implementation = ErrorResponse.class))})
+                                    schema = @Schema(implementation = ErrorResponseDto.class))})
             }
     )
     ResponseEntity<PaymentResponseDto> createPayment(

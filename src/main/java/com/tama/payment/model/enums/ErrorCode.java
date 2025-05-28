@@ -14,9 +14,7 @@ public enum ErrorCode {
     TOO_LOW_BALANCE("Balance is too low for the payment"),
 
     UNEXPECTED_ERROR("Unexpected error happened."),
-    FORM_VALIDATION_ERROR("Form is not valid: "),
-
-    MESSAGE_SENDING_ERROR("Error occurred during sending notification");
+    FORM_VALIDATION_ERROR("Form is not valid: ");
 
     String message;
 }
