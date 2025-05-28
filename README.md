@@ -47,3 +47,4 @@ docker build  -t payment-service .
 - Implement spring integration test for endpoints (which were not part of the assignment)
 - Create application.yml files for the different envs
 - Implement different validation related negative cases for PaymentControllerIT (fe: negative amount)
+- Implement error handling for other kind of exception (HttpMessageNotReadableException)
