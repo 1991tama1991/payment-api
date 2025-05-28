@@ -73,9 +73,6 @@ class PaymentControllerIT {
     @Autowired
     ErrorResponseCheckerComponent errorResponseCheckerComponent;
 
-//    @Autowired
-//    ErrorResponseCheckerComponent errorResponseCheckerComponent;
-
     static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>(
             "postgres:16-alpine"
     );
