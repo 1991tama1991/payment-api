@@ -16,7 +16,7 @@ public enum ErrorCode {
     UNEXPECTED_ERROR("Unexpected error happened."),
     FORM_VALIDATION_ERROR("Form is not valid: "),
 
-    REQUEST_IS_NOT_VALID("Request is not valid");
+    MESSAGE_SENDING_ERROR("Error occurred during sending notification");
 
     String message;
 }

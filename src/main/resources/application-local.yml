@@ -8,3 +8,7 @@ spring:
     bootstrap-servers: localhost:9092
     producer:
       bootstrap-servers: localhost:29092
+
+logging:
+  level:
+    com.tama.payment: DEBUG

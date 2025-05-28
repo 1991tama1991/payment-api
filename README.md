@@ -17,10 +17,11 @@ Run the app with local profile:
 ![img.png](img.png)
 
 ## Postman
+- Can be found under contract/postman directory
 - Please change postman collection after you change the apis
 
 ## OpenAPI
-
+- Can be found under contract/open-api directory
 [Payment REST API](http://localhost:8080/swagger-ui.html)
 - After API changes, OpenApi yaml generation: start the application and run
 ```shell
